@@ -1,0 +1,30 @@
+<center>
+<h1>Welcome!</h1>
+<hr>
+<h3>Registration:</h3>
+<form action="/users" method="post">
+	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	<label>Name</label>
+	<input type="text" name="user[name]">
+	<label>Alias</label>
+	<input type="text" name="user[alias]">
+	<label>Email</label>
+	<input type="text" name="user[email]">
+	<label>Password</label>
+	<input type="password" name="user[password]">
+	<label>*Password must be at least 8 characters long</label>
+	<label>Confirm Password:</label>
+	<input type="password" name="user[password_confirmation]"><br>
+	<input type="submit" value="Register">
+</form>
+<hr>
+<h3>Login:</h3>
+<form action="/login" method="post">
+	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	<label>Email</label>
+	<input type="text" name="email">
+	<label>Password</label>
+	<input type="password" name="password"><br>
+	<input type="submit" value="Login">
+</form>
+

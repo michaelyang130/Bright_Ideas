@@ -1,0 +1,17 @@
+<center>
+<a href="/bright_ideas">Bright Ideas</a>
+<h2><a href="/users/<%= @idea.user.id %>"><%= @idea.user.alias %></a> says: <%= @idea.content %></h2>
+<hr>
+<h3>People Who Liked This:</h3>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Alias</th>
+	</tr>
+	<% @idea.users_liked.uniq.each do |user| %>
+		<tr>
+			<td><a href="/users/<%= user.id %>"><%= user.alias %></a></td>
+			<td><%= user.name %></td>
+		</tr>
+	<% end %>
+</table>
